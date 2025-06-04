@@ -11,7 +11,6 @@ public class NotFoundResponse:BaseResponse
         Messages = ["Not Found"];
     }
 }
-
 public class NotFoundResponse<T> : BaseResponse<T>
 {
     public NotFoundResponse()
