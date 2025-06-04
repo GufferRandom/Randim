@@ -4,5 +4,5 @@ namespace Randim.Common.DataAccess.Factory;
 
 public interface IDbConnectionFactory
 {
-    IDbConnection CreateConnection();
+    Task<IDbConnection> CreateConnectionAsync();
 }

@@ -8,5 +8,10 @@ namespace Randim.Common.DataAccess.Context;
 public class DbConnectionFactory(IConfiguration configuration) : IDbConnectionFactory
 {
     private readonly string? _connectionString = configuration.GetConnectionString("PostgresSQL");
-    public IDbConnection CreateConnection() => new NpgsqlConnection(_connectionString);
+    public async Task<IDbConnection> CreateConnectionAsync()
+    {
+        var connection = new NpgsqlConnection(_connectionString);
+        await connection.OpenAsync();
+        return connection;
+    } 
 }
