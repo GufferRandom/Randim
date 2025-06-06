@@ -1,4 +1,4 @@
-﻿create table if not exists "Friend" (
+﻿create table if not exists "Friends" (
     "Id" serial primary key,
     "FriendReceiverId" integer not null references "AppUser"("Id"),
     "FriendSenderId" integer not null references "AppUser"("Id"),

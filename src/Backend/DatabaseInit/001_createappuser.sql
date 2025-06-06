@@ -1,4 +1,4 @@
-﻿create table if not exists "AppUser" (
+﻿create table if not exists "AppUsers" (
     "Id" serial primary key,
     "EntraId" uuid not null,
     "UserName" varchar(255) not null,
