@@ -7,7 +7,4 @@ public class AppUser : BaseModel
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public ICollection<int>? FriendRequestSend { get; set; }
-    public ICollection<int>? FriendRequestReceived { get; set; }
-    public ICollection<int>? ConfirmedFriends { get; set; }
 }

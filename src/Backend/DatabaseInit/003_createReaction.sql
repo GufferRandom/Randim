@@ -1,9 +1,10 @@
-﻿CREATE TYPE ReactType AS ENUM ('Like', 'Love', 'Care', 'Haha', 'Wow', 'Sad', 'Angry');
-create table if not exists "Reactions"(
-    "Id" serial primary key,
-    "UserId" integer not null references "AppUser"("Id"),
-    "ReactType" ReactType NOT NULL,
-    "CreatedAt" timestamp not null,
-    "UpdatedAt" timestamp,
-    "IsDeleted" boolean not null Default false
-)
+﻿CREATE TYPE react_type AS ENUM ('Like', 'Love', 'Care', 'Haha', 'Wow', 'Sad', 'Angry');
+
+CREATE TABLE IF NOT EXISTS reactions (
+    id serial PRIMARY KEY,
+    user_id integer NOT NULL REFERENCES appusers(id),
+    react_type react_type NOT NULL,
+    created_at timestamp NOT NULL,
+    updated_at timestamp,
+    is_deleted boolean NOT NULL DEFAULT false
+);

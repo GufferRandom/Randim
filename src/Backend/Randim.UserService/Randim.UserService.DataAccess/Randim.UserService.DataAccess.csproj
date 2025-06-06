@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Randim.Common\Randim.Common.DataAccess\Randim.Common.DataAccess.csproj" />
     <ProjectReference Include="..\..\Randim.Common\Randim.Common.Shared\Randim.Common.Shared.csproj" />
+    <ProjectReference Include="..\Randim.UserService.Models\Randim.UserService.Models.csproj" />
+    <ProjectReference Include="..\Randim.UserService.SDK\Randim.UserService.SDK.csproj" />
   </ItemGroup>
 </Project>

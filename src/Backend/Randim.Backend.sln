@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.Api", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.DataAccess", "Randim.UserService\Randim.UserService.DataAccess\Randim.UserService.DataAccess.csproj", "{6D309081-06A8-479C-9D7B-775775DE57F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.SDK", "Randim.UserService\Randim.UserService.SDK\Randim.UserService.SDK.csproj", "{377DD146-0ED2-4FC0-A24F-5271B753FB82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +86,18 @@ Global
 		{6D309081-06A8-479C-9D7B-775775DE57F8}.Release|x64.Build.0 = Release|Any CPU
 		{6D309081-06A8-479C-9D7B-775775DE57F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D309081-06A8-479C-9D7B-775775DE57F8}.Release|x86.Build.0 = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|x64.Build.0 = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Debug|x86.Build.0 = Debug|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|x64.ActiveCfg = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|x64.Build.0 = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|x86.ActiveCfg = Release|Any CPU
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,5 +108,6 @@ Global
 		{5313EF73-F13A-456C-BBAD-A7146E1C0E90} = {98F09E28-5F93-6101-34F2-019F73F868DF}
 		{F0252B60-E094-4549-986B-26D1D04CCE92} = {98F09E28-5F93-6101-34F2-019F73F868DF}
 		{6D309081-06A8-479C-9D7B-775775DE57F8} = {98F09E28-5F93-6101-34F2-019F73F868DF}
+		{377DD146-0ED2-4FC0-A24F-5271B753FB82} = {98F09E28-5F93-6101-34F2-019F73F868DF}
 	EndGlobalSection
 EndGlobal

@@ -1,12 +1,12 @@
 ﻿namespace Randim.Common.DataAccess.Interfaces;
 
-public interface IBaseRepository<T>
+public interface IBaseRepository
 {
-    Task<IEnumerable<T>> InnerJoinAsync(
-        string table1,
-        string table2,
-        string column1,
-        string column2,
+    Task<bool> ExistsAsync(string table, int id, CancellationToken cancellationToken = default);
+    Task<bool> ConnectedAsync(
+        string table,
+        int userId1,
+        int userId2,
         CancellationToken cancellationToken = default
     );
 }

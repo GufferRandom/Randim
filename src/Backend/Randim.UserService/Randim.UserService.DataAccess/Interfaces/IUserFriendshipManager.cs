@@ -1,11 +1,27 @@
 ﻿using Randim.Common.Shared.Responses;
+using Randim.UserService.SDK.DTOs;
 
 namespace Randim.UserService.DataAccess.Interfaces;
 
 public interface IUserFriendshipManager
 {
-    Task<BaseResponse<bool>> AddFriend(int userId, int friendId);
-    Task<BaseResponse<bool>> RemoveFriend(int userId, int friendId);
-    Task<BaseResponse<bool>> AcceptFriend(int userId, int friendId);
-    Task<BaseResponse<bool>> RejectFriend(int userId, int friendId);
+    Task<bool> AddFriend(
+        FriendRequestDto friendRequest,
+        CancellationToken cancellationToken = default
+    );
+    Task<bool> RemoveFriend(
+        int userId,
+        int friendId,
+        CancellationToken cancellationToken = default
+    );
+    Task<bool> AcceptFriend(
+        int friendReceiverId,
+        int friendRequesterId,
+        CancellationToken cancellationToken = default
+    );
+    Task<bool> RejectFriend(
+        int userId,
+        int friendId,
+        CancellationToken cancellationToken = default
+    );
 }

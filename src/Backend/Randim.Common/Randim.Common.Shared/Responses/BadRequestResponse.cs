@@ -2,7 +2,7 @@
 
 namespace Randim.Common.Shared.Responses;
 
-public class BadRequestResponse:BaseResponse
+public class BadRequestResponse : BaseResponse
 {
     public BadRequestResponse(string? message)
     {
@@ -11,9 +11,10 @@ public class BadRequestResponse:BaseResponse
         IsSuccess = false;
     }
 }
-public class BadRequestResponse<T>:BaseResponse<T>
+
+public class BadRequestResponse<T> : BaseResponse<T>
 {
-    public BadRequestResponse(T data,string? message)
+    public BadRequestResponse(T data, string? message)
     {
         StatusCode = HttpStatusCode.BadRequest;
         Messages = [message!];
