@@ -1,17 +1,17 @@
 ﻿using System.Data;
-using Microsoft.Extensions.Configuration;
 using Npgsql;
 using Randim.Common.DataAccess.Factory;
 
 namespace Randim.Common.DataAccess.Context;
 
-public class DbConnectionFactory(IConfiguration configuration) : IDbConnectionFactory
+public class DbConnectionFactory(string connectionString) : IDbConnectionFactory
 {
-    private readonly string? _connectionString = configuration.GetConnectionString("PostgresSQL");
+    private readonly string? _connectionString = connectionString;
+
     public async Task<IDbConnection> CreateConnectionAsync()
     {
         var connection = new NpgsqlConnection(_connectionString);
         await connection.OpenAsync();
         return connection;
-    } 
+    }
 }
