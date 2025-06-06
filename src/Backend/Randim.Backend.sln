@@ -6,11 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.Common.DataAccess", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.Common.Shared", "Randim.Common\Randim.Common.Shared\Randim.Common.Shared.csproj", "{6BA3EB63-B076-489A-84A4-9EB8D75813AD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Randim.Products", "Randim.Products", "{383D89BD-2E4D-F182-C0D1-51D7D72137B9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Randim.UserService", "Randim.UserService", "{383D89BD-2E4D-F182-C0D1-51D7D72137B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.Products.Api", "Randim.Products\Randim.Products.Api\Randim.Products.Api.csproj", "{F75B4D30-4693-4051-9999-E98EEE4CBB4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.Api", "Randim.Products\Randim.UserService.Api\Randim.UserService.Api.csproj", "{F75B4D30-4693-4051-9999-E98EEE4CBB4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.Products.Models", "Randim.Products\Randim.Products.Models\Randim.Products.Models.csproj", "{1E0ED2F0-DC4B-4529-B956-F4603216D96F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.Models", "Randim.Products\Randim.UserService.Models\Randim.UserService.Models.csproj", "{1E0ED2F0-DC4B-4529-B956-F4603216D96F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
