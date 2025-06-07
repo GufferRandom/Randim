@@ -173,13 +173,31 @@ public class UserFriendshipManager(IDbConnectionFactory connectionFactory)
         return res > 0 && deleteConfirmedFriends > 0;
     }
 
-    public Task<bool> RejectFriend(
+    public async Task<bool> RejectFriend(
         int userId,
         int friendId,
         CancellationToken cancellationToken = default
     )
     {
-        throw new NotImplementedException();
+        using var connection = await _connectionFactory.CreateConnectionAsync();
+        var (userid1, userid2) = await NormalizingUserIds(userId, friendId);
+        var connectedSql = new CommandDefinition(
+            @"SELECT EXISTS(SELECT 1 FROM friendrequests WHERE user_id_1 = @userid1 AND user_id_2 = @userid2)",
+            new { userid1, userid2 },
+            cancellationToken: cancellationToken
+        );
+        var connected = await connection.ExecuteScalarAsync<bool>(connectedSql);
+        if (!connected)
+            return false;
+        var sql = @"DELETE FROM friendrequests WHERE user_id_1 = @userid1 AND user_id_2 = @userid2";
+        var res = await connection.ExecuteAsync(
+            new CommandDefinition(
+                sql,
+                new { userid1, userid2 },
+                cancellationToken: cancellationToken
+            )
+        );
+        return res > 0;
     }
 
     private async Task<bool> ConnectedAsync(
