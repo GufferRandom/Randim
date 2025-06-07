@@ -1,4 +1,5 @@
 ﻿using Randim.Common.Shared.Responses;
+using Randim.UserService.Models.Models;
 using Randim.UserService.SDK.DTOs;
 
 namespace Randim.UserService.DataAccess.Interfaces;
@@ -7,6 +8,10 @@ public interface IUserFriendshipManager
 {
     Task<bool> AddFriend(
         FriendRequestDto friendRequest,
+        CancellationToken cancellationToken = default
+    );
+    Task<IEnumerable<AppUser>?> GetFriends(
+        int userId,
         CancellationToken cancellationToken = default
     );
     Task<bool> RemoveFriend(

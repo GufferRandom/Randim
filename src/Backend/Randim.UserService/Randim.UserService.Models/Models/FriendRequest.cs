@@ -2,7 +2,8 @@
 
 public class FriendRequest : BaseModel
 {
-    public required int FriendReceiverId { get; set; }
-    public required int FriendSenderId { get; set; }
+    public required int UserId1 { get; set; }
+    public required int UserId2 { get; set; }
+    public required int FriendRequesterId { get; set; }
     public bool Accepted { get; set; } = false;
 }

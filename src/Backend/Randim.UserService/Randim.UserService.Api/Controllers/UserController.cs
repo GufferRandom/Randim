@@ -22,8 +22,26 @@ public class UserController(IUserFriendshipManager userFriendshipManager) : Cont
     {
         var res = await userFriendshipManager.AcceptFriend(
             friendRequest.FriendReceiverId,
-            friendRequest.FriendSenderId
+            friendRequest.FriendRequesterId
         );
+        return Ok(res);
+    }
+
+    [HttpGet("friends")]
+    public async Task<IActionResult> GetFriends([FromQuery] int userId)
+    {
+        var res = await userFriendshipManager.GetFriends(userId);
+        return Ok(res);
+    }
+
+    [HttpDelete("friends")]
+    public async Task<IActionResult> RemoveFriend(
+        [FromQuery] int userId,
+        [FromQuery] int friendId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var res = await userFriendshipManager.RemoveFriend(userId, friendId, cancellationToken);
         return Ok(res);
     }
 }

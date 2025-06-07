@@ -12,6 +12,7 @@ public static class AddDatabaseExtension
     )
     {
         services.AddSingleton<IDbConnectionFactory>(_ => new DbConnectionFactory(connectionString));
+        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
         return services;
     }
 }

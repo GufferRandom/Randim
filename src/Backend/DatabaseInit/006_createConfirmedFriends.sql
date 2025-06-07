@@ -7,5 +7,5 @@
     updated_at timestamp,
     is_deleted boolean NOT NULL DEFAULT false,
     UNIQUE (user_id_1, user_id_2),
-    CHECK (user_id_1 <> user_id_2)
+    CHECK (user_id_1 > user_id_2)
 );
