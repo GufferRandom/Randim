@@ -10,6 +10,13 @@ namespace Randim.UserService.Api.Controllers;
 [Route("api/users")]
 public class UserController(IUserFriendshipManager userFriendshipManager) : ControllerBase
 {
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        var user = User.Claims.FirstOrDefault(x => x.Type == "given_name");
+        return Ok();
+    }
+
     [HttpPost("addFriend")]
     public async Task<IActionResult> AddFriend([FromBody] FriendRequestDto friendRequest)
     {
