@@ -62,21 +62,25 @@ const logout = () => {
     localStorage.clear();
     window.location.href = logoutURI;
 }
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
     const token = localStorage.getItem("token");
-    if(token!==null){
-        const root = document.querySelector("#root");
-        const logoutBtn = document.createElement("button");
-        logoutBtn.innerText = "Logout";
-        logoutBtn.addEventListener("click", logout);
-        root.appendChild(logoutBtn);
-        return;
-    }
+    const btn = document.querySelector("#buttonSiso");
+    if (!btn) return;
     const params = new URLSearchParams(window.location.hash.split("#")[1]);
     const code = params.get("code");
-    if(code){
-        getToken(code);
-        return;
+    if (code) {
+      getToken(code);
+      return;
     }
-    redirectToKeycloak();
+    if (token !== null) {
+      btn.innerText = "Logout";
+      btn.onclick = logout;
+    } else {
+      btn.innerText = "Sign In";
+      btn.onclick = () => {
+        redirectToKeycloak();
+      };
+    }
   });
+  
+  
