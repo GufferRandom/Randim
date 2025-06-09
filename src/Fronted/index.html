@@ -3,12 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Randim</title>
 </head>
 <body>
-    <div id="root" />
-    <script src="./js/auth.js"></script>
-    <script type="module" src="./js/test.js"></script>
-    <button id="buttonSiso">Sign In / Sign Up</button>
+    <script  type="module" src="./js/auth.js"></script>
+    <div class="div-container">
+        <div class="container">
+            <h1 id="Sataur">Welcome To Randim</h1>
+            <p>Connect with friends and the world around you.</p>
+            <button class="buttonSiso" onclick="SignIn()">Sign In / Sign Up</button>
+        </div>
+    </div>
+        <div class="container2">
+            <div class="textandbutton">
+                <h2 id="sub-text">Join us today</h2>
+                <p class="paragrap_sub">Creating an account is easy and fun.</p>
+                <button class="buttonSiso" onclick="SignIn()">Sign In / Sign Up</button>
+            </div>
+            <div class="sub-container">
+                <div class="imageandtext">
+                    <div class="kidediv">
+                        <div class="img-container">
+                            <img src="./images/image.png" alt="#">
+                        </div>
+                        <div class="text-container">
+                            <h5 class="sub-text-class" >Instant Connection</h5>
+                            <p>Meet new people instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="imageandtext">
+                    <div class="kidediv">
+                        <div class="img-container">
+                            <img class="imgr" src="./images/image.png" alt="#">
+                        </div>
+                        <div class="text-container">
+                            <h5  class="sub-text-class">Instant Connection</h5>
+                            <p>Meet new people instantly.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

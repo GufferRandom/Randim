@@ -1,0 +1,125 @@
+#Sataur{
+    color: #000;
+    text-align: center;
+    font-family: "Microsoft PhagsPa";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; 
+}
+.div-container{
+    display: flex;
+width: 1440px;
+padding: 60px 170px;
+margin-top: 80px;
+margin-left: 240px;
+margin-right: 240px;
+justify-content: center;
+align-items: center;
+gap: 60px;
+}
+.container{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+flex: 1 0 0;
+}
+.buttonSiso{
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+background: #00731F;
+color: #FFF;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; 
+}
+.container2{
+    display: flex;
+    width: 1440px;
+    padding: 60px 170px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 240px;
+gap: 60px;
+}
+.textandbutton{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+}
+#sub-text{
+    align-self: stretch;
+    color: #000;
+font-family: Roboto;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 48px; 
+}
+.sub-container{
+    display: flex;
+padding: 20px 0px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex: 1 0 0;
+}
+.imageandtext{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+.kidediv{
+    display: flex;
+padding: 16px;
+justify-content: center;
+align-items: flex-start;
+gap: 16px;
+flex: 1 0 0;
+border-radius: 6px;
+border: 1px solid rgba(0, 0, 0, 0.10);
+}
+.img-container{
+    display: flex;
+width: 100px;
+height: 100px;
+align-items: flex-start;
+}
+.text-container{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+flex: 1 0 0;
+}
+.paragrap_sub{
+    align-self: stretch;
+    color: #000;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; 
+}
+
+.sub-text-class{
+    align-self: stretch;
+    color: #000;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; 
+}

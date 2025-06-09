@@ -1,7 +1,7 @@
 const baseUrl = "http://localhost:8080";
 const realm = "RandimSocialMedia";
 const client_id = "public-client";
-const redirect_uri = "http://localhost:5500/";
+const redirect_uri = "http://localhost:5500/main.html";
 
 const generateRandomState=()=> {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -28,26 +28,31 @@ const generateRandomState=()=> {
     }
     window.location.href = conectionURI;
 }
-const getToken = async (code) => {
+export const getToken = async (code) => {
     const tokenUri = new URL(`${baseUrl}/realms/${realm}/protocol/openid-connect/token`);
-    var body = new URLSearchParams();
+    const body = new URLSearchParams();
     body.append("client_id", client_id);
     body.append("redirect_uri", redirect_uri);
     body.append("grant_type", "authorization_code");
     body.append("code", code);
-    const data = await fetch(tokenUri, {
-        method: 'post',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body,
+    const response = await fetch(tokenUri, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body,
     });
-    const jsonData = await data.json();
-        localStorage.setItem("token", jsonData.access_token);
-        localStorage.setItem("id_token", jsonData.id_token);
-        localStorage.setItem("refresh_token", jsonData.refresh_token);
-        localStorage.setItem("session_state", jsonData.session_state);
-        history.replaceState({}, '', '/');
+    if (!response.ok) {
+      console.error('Failed to fetch token:', response.status, await response.text());
+      return;
+    }
+    const jsonData = await response.json();
+    localStorage.setItem("token", jsonData.access_token);
+    localStorage.setItem("id_token", jsonData.id_token);
+    localStorage.setItem("refresh_token", jsonData.refresh_token);
+    localStorage.setItem("session_state", jsonData.session_state);
+    history.replaceState({}, '', '/main.html');
     location.reload();
-}
+  }
+  
 const logout = () => {
     const logoutURI = new URL(`${baseUrl}/realms/${realm}/protocol/openid-connect/logout`);
     const id_token_hint = localStorage.getItem("id_token");
@@ -62,25 +67,35 @@ const logout = () => {
     localStorage.clear();
     window.location.href = logoutURI;
 }
-window.addEventListener("load", () => {
-    const token = localStorage.getItem("token");
-    const btn = document.querySelector("#buttonSiso");
-    if (!btn) return;
+export function SignIn(){
+    redirectToKeycloak();
+}
+export function RedirectToMainPage(){
+    return; 
+}
+ window.addEventListener("load",async () => {
     const params = new URLSearchParams(window.location.hash.split("#")[1]);
     const code = params.get("code");
     if (code) {
-      getToken(code);
+      await getToken(code);
       return;
     }
-    if (token !== null) {
-      btn.innerText = "Logout";
-      btn.onclick = logout;
-    } else {
-      btn.innerText = "Sign In";
-      btn.onclick = () => {
-        redirectToKeycloak();
-      };
-    }
+    UserRedirectBasedOnAuth();
   });
-  
-  
+export function UserRedirectBasedOnAuth(){
+    const token = localStorage.getItem("token");
+    if (token !== null) {
+        RedirectToMainPage();
+    } else {
+        SignIn();
+    }
+}
+export function CheckIfUserIsAuthed(){
+    const token = localStorage.getItem("token");
+    if (token !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+window.SignIn = SignIn;
