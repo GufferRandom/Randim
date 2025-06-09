@@ -23,12 +23,13 @@ public static class ValidateJwtToken
                 options.MetadataAddress =
                     "http://localhost:8080/realms/RandimSocialMedia/.well-known/openid-configuration";
                 options.Authority = "http://localhost:8080/realms/RandimSocialMedia";
-                options.Audience = "public-client";
+                options.Audience = "account";
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
                 };
             });
     }

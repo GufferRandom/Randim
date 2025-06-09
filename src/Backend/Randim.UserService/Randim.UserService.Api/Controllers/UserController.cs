@@ -8,13 +8,17 @@ namespace Randim.UserService.Api.Controllers;
 
 [ApiController]
 [Route("api/users")]
-public class UserController(IUserFriendshipManager userFriendshipManager) : ControllerBase
+public class UserController(
+    IUserFriendshipManager userFriendshipManager,
+    IHttpContextAccessor httpContextAccessor
+) : ControllerBase
 {
     [HttpGet("test")]
     public IActionResult Test()
     {
         var user = User.Claims.FirstOrDefault(x => x.Type == "given_name");
-        return Ok();
+        httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "given_name");
+        return Ok(new { message = "CORS test OK", user.Value });
     }
 
     [HttpPost("addFriend")]
