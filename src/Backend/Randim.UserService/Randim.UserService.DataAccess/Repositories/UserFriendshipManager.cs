@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System.Security.Claims;
+using Dapper;
 using Randim.Common.DataAccess.Factory;
 using Randim.Common.DataAccess.Repository;
 using Randim.UserService.DataAccess.Interfaces;
@@ -12,6 +13,16 @@ public class UserFriendshipManager(IDbConnectionFactory connectionFactory)
         IUserFriendshipManager
 {
     private readonly IDbConnectionFactory _connectionFactory = connectionFactory;
+
+    public Task<bool> CreateUser(ClaimsPrincipal user)
+    {
+        var userClaims = user.Claims.ToDictionary(x => x.Type, x => x.Value);
+        Console.WriteLine(userClaims);
+        return new Task<bool>(() =>
+        {
+            return true;
+        });
+    }
 
     public async Task<bool> AddFriend(
         FriendRequestDto friendRequest,

@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Randim.Common", "Randim.Common", "{F106B3B6-8B93-4243-A6F7-1F2FC25AECA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.Common.DataAccess", "Randim.Common\Randim.Common.DataAccess\Randim.Common.DataAccess.csproj", "{E9244370-D90D-429F-9118-BEEEE05A27FD}"
@@ -15,6 +18,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.DataAccess", "Randim.UserService\Randim.UserService.DataAccess\Randim.UserService.DataAccess.csproj", "{6D309081-06A8-479C-9D7B-775775DE57F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randim.UserService.SDK", "Randim.UserService\Randim.UserService.SDK\Randim.UserService.SDK.csproj", "{377DD146-0ED2-4FC0-A24F-5271B753FB82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,5 +118,8 @@ Global
 		{F0252B60-E094-4549-986B-26D1D04CCE92} = {98F09E28-5F93-6101-34F2-019F73F868DF}
 		{6D309081-06A8-479C-9D7B-775775DE57F8} = {98F09E28-5F93-6101-34F2-019F73F868DF}
 		{377DD146-0ED2-4FC0-A24F-5271B753FB82} = {98F09E28-5F93-6101-34F2-019F73F868DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45115E36-E412-4A56-AF03-66BB62712E4F}
 	EndGlobalSection
 EndGlobal

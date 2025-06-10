@@ -1,4 +1,5 @@
-﻿using Randim.Common.Shared.Responses;
+﻿using System.Security.Claims;
+using Randim.Common.Shared.Responses;
 using Randim.UserService.Models.Models;
 using Randim.UserService.SDK.DTOs;
 
@@ -6,6 +7,7 @@ namespace Randim.UserService.DataAccess.Interfaces;
 
 public interface IUserFriendshipManager
 {
+    Task<bool> CreateUser(ClaimsPrincipal user);
     Task<bool> AddFriend(
         FriendRequestDto friendRequest,
         CancellationToken cancellationToken = default

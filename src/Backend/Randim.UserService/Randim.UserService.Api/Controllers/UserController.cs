@@ -13,12 +13,12 @@ public class UserController(
     IHttpContextAccessor httpContextAccessor
 ) : ControllerBase
 {
-    [HttpGet("test")]
-    public IActionResult Test()
+    [HttpPost("create")]
+    public IActionResult Create()
     {
-        var user = User.Claims.FirstOrDefault(x => x.Type == "given_name");
-        httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "given_name");
-        return Ok(new { message = "CORS test OK", user.Value });
+        var user = User.Claims;
+        userFriendshipManager.CreateUser(User);
+        return Ok(new { message = "User created" });
     }
 
     [HttpPost("addFriend")]
